@@ -1293,7 +1293,7 @@ GameObject:
   - component: {fileID: 117950017}
   - component: {fileID: 117950018}
   m_Layer: 0
-  m_Name: StartRoom
+  m_Name: Kitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10802,7 +10802,7 @@ GameObject:
   - component: {fileID: 863289798}
   - component: {fileID: 863289799}
   m_Layer: 0
-  m_Name: Kitchen
+  m_Name: Hub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
