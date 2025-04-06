@@ -1,16 +1,12 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Task : MonoBehaviour
+public abstract class Task : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Room room;
+    public float taskDuration;
+    public abstract bool CanAttempt();
+    public abstract bool Attempt(Team team);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+

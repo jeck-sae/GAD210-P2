@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Team : IStats
 {
-
+    public Room currentRoom;
 
     public Team(List<Character> characters)
     {
@@ -38,4 +38,14 @@ public class Team : IStats
         
         return (1 - value) * 100;
     }
+
+    public void ChangeRoom(Room room) 
+    { 
+        if(room == currentRoom) return;
+        currentRoom?.RemoveTeam(this);
+        currentRoom = room;
+        currentRoom.AddTeam(this);
+    }
+
+
 }
