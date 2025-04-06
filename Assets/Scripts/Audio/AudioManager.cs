@@ -11,12 +11,9 @@ public class AudioManager : Singleton<AudioManager>
     public AudioClip buttonSound;
     public AudioClip hoverSound;
 
-    public void PlaySound(AudioClip audioClip, float volume = 1, Transform spawn = null, bool loop = false, float pitch = 1f)
+    public void PlaySound(AudioClip audioClip, float volume = 1, bool loop = false, float pitch = 1f)
     {
-
-        if (spawn == null)
-        spawn = transform; // Default to this object's transform
-        AudioSource audioSource = Instantiate(soundFXPrefab, spawn.position, Quaternion.identity);
+        AudioSource audioSource = Instantiate(soundFXPrefab, transform.position, Quaternion.identity);
 
         audioSource.clip = audioClip;
         audioSource.volume = volume;
@@ -33,13 +30,11 @@ public class AudioManager : Singleton<AudioManager>
         float clipLength = audioSource.clip.length;
         Destroy(audioSource.gameObject, clipLength);
     }
-    public void PlayRandomSound(AudioClip[] audioClip, float volume = 1, Transform spawn = null, bool loop = false, float pitch = 1f)
+    public void PlayRandomSound(AudioClip[] audioClip, float volume = 1, bool loop = false, float pitch = 1f)
     {
         int R = Random.Range(0, audioClip.Length);
 
-        if (spawn == null)
-            spawn = transform; // Default to this object's transform
-        AudioSource audioSource = Instantiate(soundFXPrefab, spawn.position, Quaternion.identity);
+        AudioSource audioSource = Instantiate(soundFXPrefab, transform.position, Quaternion.identity);
 
         audioSource.clip = audioClip[R];
         audioSource.volume = volume;
