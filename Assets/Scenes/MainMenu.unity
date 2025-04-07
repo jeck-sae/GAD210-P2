@@ -720,6 +720,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 60177408}
+  - component: {fileID: 60177410}
   - component: {fileID: 60177409}
   m_Layer: 8
   m_Name: Medicalbay
@@ -792,6 +793,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.7, y: 13.6}
   m_EdgeRadius: 0
+--- !u!114 &60177410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60177407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathToRoom: {fileID: 11400000, guid: 8e1967bac2001b04aabd99c547893874, type: 2}
+  roomID: 3
+  assignedTask: {fileID: 0}
 --- !u!1 &61591684
 GameObject:
   m_ObjectHideFlags: 0
@@ -13711,6 +13727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1014246667}
+  - component: {fileID: 1014246669}
   - component: {fileID: 1014246668}
   m_Layer: 8
   m_Name: Communications
@@ -13783,6 +13800,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 11, y: 14}
   m_EdgeRadius: 0
+--- !u!114 &1014246669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014246666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathToRoom: {fileID: 11400000, guid: 6d24c4557abfc2f4d9d775bd4b788672, type: 2}
+  roomID: 2
+  assignedTask: {fileID: 0}
 --- !u!1 &1014656530
 GameObject:
   m_ObjectHideFlags: 0
@@ -18640,9 +18672,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1234492141}
+  - component: {fileID: 1234492143}
   - component: {fileID: 1234492142}
   m_Layer: 8
-  m_Name: Bridge
+  m_Name: ControlRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18721,6 +18754,21 @@ PolygonCollider2D:
       - {x: 2.8507314, y: -6.0151253}
       - {x: 2.8754673, y: 0.89304537}
   m_UseDelaunayMesh: 0
+--- !u!114 &1234492143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234492140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathToRoom: {fileID: 11400000, guid: 076a2052ba5a7614ab06cf768204b1b0, type: 2}
+  roomID: 1
+  assignedTask: {fileID: 0}
 --- !u!1 &1236862891
 GameObject:
   m_ObjectHideFlags: 0
@@ -26559,7 +26607,7 @@ MonoBehaviour:
   startingEnergy: 25
   startingOxygen: 25
   decayAmount: 1
-  decayInterval: 1
+  decayInterval: 3
   foodText: {fileID: 410216321}
   energyText: {fileID: 676735428}
   oxygenText: {fileID: 950067665}
@@ -28554,6 +28602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1843035076}
+  - component: {fileID: 1843035078}
   - component: {fileID: 1843035077}
   m_Layer: 8
   m_Name: Storage
@@ -28626,6 +28675,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 8.7, y: 8.7}
   m_EdgeRadius: 0
+--- !u!114 &1843035078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843035075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathToRoom: {fileID: 11400000, guid: 04cf4262aedfa834180cb2fbb21f6f98, type: 2}
+  roomID: 5
+  assignedTask: {fileID: 0}
 --- !u!1 &1843231722
 GameObject:
   m_ObjectHideFlags: 0
@@ -30501,7 +30565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1990311632
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31825,10 +31889,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1014246667}
-  - {fileID: 60177408}
   - {fileID: 1264790792}
   - {fileID: 1234492141}
+  - {fileID: 1014246667}
+  - {fileID: 60177408}
   - {fileID: 222950896}
   - {fileID: 1843035076}
   - {fileID: 1773093386}
