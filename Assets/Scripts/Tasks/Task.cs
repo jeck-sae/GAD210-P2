@@ -1,0 +1,9 @@
+using UnityEngine;
+
+public class Task : ScriptableObject
+{
+    public string taskName;
+    public ProficiencyType requiredProficiency;
+
+    public virtual void OnSuccess() { }
+}

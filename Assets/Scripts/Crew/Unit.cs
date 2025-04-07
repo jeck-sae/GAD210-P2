@@ -4,10 +4,10 @@ using System.Collections;
 public class Unit : MonoBehaviour
 {
     [SerializeField] GameObject overlay;
+    [SerializeField] Character character;
     [HideInInspector] public bool IsMoving = false;
 
     private int progress;
-    private int stops;
     private bool returning = false;
     private PathToRoom currentPath;
 
@@ -15,12 +15,13 @@ public class Unit : MonoBehaviour
     {
         Debug.Log("Unit starts path");
         IsMoving = true;
+        returning = false;
         currentPath = path;
         progress = 0;
-        stops = path.WayToRoom.Length;
 
         MoveToNextStop();
     }
+
     public void StartPathBack()
     {
         Debug.Log("Unit starts path back");
@@ -33,20 +34,33 @@ public class Unit : MonoBehaviour
 
     private void MoveToNextStop()
     {
-        bool endOfForwardPath = !returning && progress >= stops;
-        bool endOfReturnPath = returning && progress < 0;
+        bool endOfForwardPath = !returning && progress >= currentPath.WayToRoom.Length;
+        bool beforeHub = returning && progress < 0;
 
-        if (endOfForwardPath || endOfReturnPath)
+        if (endOfForwardPath)
         {
-            if (endOfForwardPath)
+            Debug.Log("Reached final room");
+            Room finalRoom = RoomManager.GetRoom(currentPath.WayToRoom[currentPath.WayToRoom.Length - 1].NextRoom);
+
+            if (finalRoom.assignedTask)
             {
-                Debug.Log("Reached final room");
-                IsMoving = false;
+                StartTask(finalRoom);
+                return;
+            }
+            else
+            {
                 StartPathBack();
                 return;
             }
+        }
 
+        if (beforeHub)
+        {
             Debug.Log("Returned to hub");
+
+            Room hubRoom = RoomManager.GetRoom(RoomID.Hub);
+            transform.position = hubRoom.transform.position;
+
             IsMoving = false;
             currentPath = null;
             return;
@@ -71,10 +85,18 @@ public class Unit : MonoBehaviour
 
         MoveToNextStop();
     }
+
+    private void StartTask(Room room)
+    {
+        TaskManager.Instance.PerformTask(character, room.assignedTask);
+        StartPathBack();
+    }
+
     public void SetUnitActive()
     {
         overlay.SetActive(true);
     }
+
     public void SetUnitInActive()
     {
         overlay.SetActive(false);
