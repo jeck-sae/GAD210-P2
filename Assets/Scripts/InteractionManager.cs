@@ -46,9 +46,11 @@ public class InteractionManager : Singleton<InteractionManager>
                 Room room = hit.collider.GetComponent<Room>();
                 if (room)
                 {
-
-                    activeUnit.StartPath(room.pathToRoom);
-                    DeselectActiveUnit();
+                    if (room.pathToRoom != null)
+                    {
+                        activeUnit.StartPath(room.pathToRoom);
+                        DeselectActiveUnit();
+                    }
                 }
             }
         }

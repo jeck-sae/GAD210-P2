@@ -5,44 +5,71 @@ public class Unit : MonoBehaviour
 {
     [SerializeField] GameObject overlay;
     [HideInInspector] public bool IsMoving = false;
+
     private int progress;
     private int stops;
+    private bool returning = false;
+    private PathToRoom currentPath;
 
     public void StartPath(PathToRoom path)
     {
         Debug.Log("Unit starts path");
         IsMoving = true;
+        currentPath = path;
         progress = 0;
         stops = path.WayToRoom.Length;
 
-        MoveToNextStop(path);
+        MoveToNextStop();
+    }
+    public void StartPathBack()
+    {
+        Debug.Log("Unit starts path back");
+        IsMoving = true;
+        returning = true;
+        progress = currentPath.WayToRoom.Length - 1;
+
+        MoveToNextStop();
     }
 
-    void MoveToNextStop(PathToRoom path)
+    private void MoveToNextStop()
     {
-        if (progress >= stops)
+        bool endOfForwardPath = !returning && progress >= stops;
+        bool endOfReturnPath = returning && progress < 0;
+
+        if (endOfForwardPath || endOfReturnPath)
         {
+            if (endOfForwardPath)
+            {
+                Debug.Log("Reached final room");
+                IsMoving = false;
+                StartPathBack();
+                return;
+            }
+
+            Debug.Log("Returned to hub");
             IsMoving = false;
-            Debug.Log("Final room");
+            currentPath = null;
             return;
         }
 
-        Way currentWay = path.WayToRoom[progress];
+        Way currentWay = currentPath.WayToRoom[progress];
         Room room = RoomManager.GetRoom(currentWay.NextRoom);
 
         transform.position = room.transform.position;
 
-        StartCoroutine(WaitAndMove(currentWay.TimeToWait, room, path));
+        StartCoroutine(WaitAndMove(currentWay.TimeToWait));
     }
 
-    IEnumerator WaitAndMove(float waitTime, Room room, PathToRoom path)
+    IEnumerator WaitAndMove(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
 
-        transform.position = room.transform.position;
+        if (returning)
+        progress -= 1;
+        else
+        progress += 1;
 
-        progress++;
-        MoveToNextStop(path);
+        MoveToNextStop();
     }
     public void SetUnitActive()
     {

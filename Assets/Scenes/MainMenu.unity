@@ -18453,6 +18453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1264790792}
+  - component: {fileID: 1264790794}
   - component: {fileID: 1264790793}
   m_Layer: 8
   m_Name: Hub
@@ -18525,6 +18526,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 16, y: 17}
   m_EdgeRadius: 0
+--- !u!114 &1264790794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264790791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathToRoom: {fileID: 0}
+  roomID: 0
+  timeToCross: 0
+  nextRoom: {fileID: 0}
 --- !u!1 &1270751251
 GameObject:
   m_ObjectHideFlags: 0

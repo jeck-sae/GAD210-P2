@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: AirLock
   m_EditorClassIdentifier: 
   WayToRoom:
+  - NextRoom: 0
+    TimeToWait: 2
   - NextRoom: 8
     TimeToWait: 2
   - NextRoom: 10
