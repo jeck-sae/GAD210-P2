@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 597e686b5db000040b3b315120e3b252, type: 3}
-  m_Name: Cooking
+  m_Name: EnergySomething
   m_EditorClassIdentifier: 
-  taskName: Cooking
-  requiredProficiency: 3
+  taskName: EnergySomething
+  requiredProficiency: 1
   income:
-    resourceType: 2
+    resourceType: 1
     modifier: 10

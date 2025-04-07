@@ -18768,7 +18768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathToRoom: {fileID: 11400000, guid: 076a2052ba5a7614ab06cf768204b1b0, type: 2}
   roomID: 1
-  assignedTask: {fileID: 0}
+  assignedTask: {fileID: 11400000, guid: a5df4d4ba4cc8bb4cac2d43a80a88438, type: 2}
 --- !u!1 &1236862891
 GameObject:
   m_ObjectHideFlags: 0
@@ -27565,7 +27565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathToRoom: {fileID: 11400000, guid: 73111becadefa6c409c722911a8108de, type: 2}
   roomID: 6
-  assignedTask: {fileID: 0}
+  assignedTask: {fileID: 11400000, guid: 00e5d42410a606e49ace40c5253b15a0, type: 2}
 --- !u!1 &1785131842
 GameObject:
   m_ObjectHideFlags: 0
