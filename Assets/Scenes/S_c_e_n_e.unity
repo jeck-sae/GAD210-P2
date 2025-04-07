@@ -4130,7 +4130,7 @@ MonoBehaviour:
   distance: 5
   offset: {x: 0, y: 0}
   ignoreTiles: []
-  size: {x: 30, y: 30}
+  size: {x: 30, y: 18}
   color: {r: 0.45514727, g: 0.8392157, b: 0.36078432, a: 1}
 --- !u!4 &343104047
 Transform:
@@ -10861,7 +10861,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.09385808, g: 0.16981131, b: 0.08891064, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -21232,7 +21232,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 9a0dc21f57f808743a5dd1a730e3b9c4, type: 2}
+  sharedProfile: {fileID: 11400000, guid: e1f7fd4bdf56de744be577ff80015297, type: 2}
 --- !u!4 &1956558794
 Transform:
   m_ObjectHideFlags: 0
