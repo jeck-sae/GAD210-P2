@@ -411,11 +411,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialouges:
   - charId: 0
-    dialouge: Command, do you copy?
+    dialouge: "\u2013is \u2013 \u2014----on shuttle \u201321, I repeat th\u2013 is
+      expedition \u2014--- \u20141, \u2014ommand do you copy? "
   - charId: 0
-    dialouge: Do you copy?
+    dialouge: ---//*****
   - charId: 0
-    dialouge: This vessel 2213, do you copy?
+    dialouge: 'I repeat this is expedition shuttle 0021, command do you copy? '
+  - charId: 0
+    dialouge: 'Finally! '
+  - charId: 0
+    dialouge: "Command, expedition into the whirlpools has failed, we\u2019ve been
+      hit. Expedition shuttle 0021 is adrift."
+  - charId: 0
+    dialouge: "We\u2019re expecting volcanic activity soon, I don't think the shuttle
+      can take another hit. "
+  - charId: 0
+    dialouge: We will try to maintain it, but chances are looking low, I ask for
+      immediate backup.
+  - charId: 0
+    dialouge: " I repeat 0021 is adrift, requesting immediate backup, over\u2014 "
   characters:
   - characterName: Jeff
     charSprite: {fileID: 6876014365125526849, guid: ca616b96774ffee4286c4fc01707814e, type: 3}
