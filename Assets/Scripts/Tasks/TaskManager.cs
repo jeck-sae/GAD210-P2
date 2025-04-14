@@ -1,5 +1,5 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public enum ProficiencyType
 {
@@ -10,26 +10,8 @@ public enum ProficiencyType
 }
 public class TaskManager : Singleton<TaskManager>
 {
-    public void PerformTask(Character character, Task task)
-    {
-        bool success = Roll(character, task);
-        if (success)
-        {
-            task.OnSuccess();
-            Debug.Log("Success!");
-            return;
-        }
 
-        Debug.Log("Fail!");
-    }
-    private bool Roll(Character character, Task task)
-    {
-        float chance = GetSuccessChance(character, task);
-        float roll = Random.Range(0f, 1f);
-        return roll <= chance;
-    }
-
-    public float GetSuccessChance(Character character, Task task)
+    public float GetTaskTime(Character character, Task task)
     {
         int level = 0;
 
@@ -41,16 +23,23 @@ public class TaskManager : Singleton<TaskManager>
                 break;
             }
         }
-        switch (level)
+
+        float multiplier = level switch
         {
-            case 1:
-                return 0.2f;
-            case 2:
-                return 0.5f;
-            case 3:
-                return 0.8f;
-            default:
-                return 0.1f; // if stats are diffrent
+            1 => 0.7f,  // 30% faster
+            2 => 0.5f,  // 50% faster
+            3 => 0.3f,  // 70% faster
+            _ => 1.0f   // No proficiency, full time
+        };
+
+        return task.timeToComplete * multiplier;
+    }
+
+    public void UpdateProgress(Unit unit, float progress)
+    {
+        if (unit.progressBarUI)
+        {
+            unit.progressBarUI.UpdateProgress(progress);
         }
     }
 }

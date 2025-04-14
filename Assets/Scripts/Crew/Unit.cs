@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Unit : MonoBehaviour
 {
+    public ProgressBarUI progressBarUI;
     [SerializeField] GameObject overlay;
     [SerializeField] Character character;
     [HideInInspector] public bool IsMoving = false;
@@ -88,8 +89,34 @@ public class Unit : MonoBehaviour
 
     private void StartTask(Room room)
     {
-        TaskManager.Instance.PerformTask(character, room.assignedTask);
-        StartPathBack();
+        float adjustedTime = TaskManager.Instance.GetTaskTime(character, room.assignedTask);
+        StartCoroutine(PerformTaskRoutine(room, adjustedTime));
+    }
+    IEnumerator PerformTaskRoutine(Room room, float duration)
+    {
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            float progress = timer / duration;
+
+            TaskManager.Instance.UpdateProgress(this, progress);
+
+            yield return null;
+        }
+
+        room.assignedTask.OnSuccess();
+        TaskManager.Instance.UpdateProgress(this, 0);
+
+        if (room.assignedTask is PassiveTask)
+        {
+            StartTask(room);
+        }
+        else
+        {
+            StartPathBack();
+        }
     }
 
     public void SetUnitActive()

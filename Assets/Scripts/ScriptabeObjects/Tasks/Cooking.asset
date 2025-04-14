@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Cooking
   m_EditorClassIdentifier: 
   taskName: Cooking
+  timeToComplete: 10
   requiredProficiency: 3
   income:
     resourceType: 2
