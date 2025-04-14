@@ -4,6 +4,12 @@ public class DialougeTrigger : MonoBehaviour
 {
     public Dialouge[] dialouges;
     public DialougeCharacter[] characters;
+
+    [System.Obsolete]
+    public void StartDialouge()
+    {
+        FindObjectOfType<DialougeManager>().OpenDialouge(dialouges,characters);
+    }
 }
 
 [System.Serializable]
@@ -16,6 +22,6 @@ public class Dialouge
 [System.Serializable]
 public class DialougeCharacter
 {
-    public int charName;
+    public string characterName;
     public Sprite charSprite;
 }
