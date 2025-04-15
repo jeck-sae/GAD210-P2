@@ -9,28 +9,49 @@ public class InteractionManager : Singleton<InteractionManager>
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, unitLayer);
-
-            if (hit.collider != null)
+            if (activeUnit == null)
             {
-                Unit unit = hit.collider.GetComponent<Unit>();
-                if (unit == activeUnit)
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.GetRayIntersection(ray, unitLayer);
+
+                if (hit.collider != null)
                 {
-                    return;
-                }
-                else if (unit)
-                {
-                    if (unit.IsMoving)
+                    Unit unit = hit.collider.GetComponent<Unit>();
+                    if (unit == activeUnit)
                     {
-                        DeselectActiveUnit();
                         return;
                     }
-                    SetActiveUnit(unit);
+                    else if (unit)
+                    {
+                        if (unit.IsMoving)
+                        {
+                            DeselectActiveUnit();
+                            return;
+                        }
+                        SetActiveUnit(unit);
+                    }
+                    else
+                    {
+                        DeselectActiveUnit();
+                    }
                 }
-                else
+            }
+            else
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.GetRayIntersection(ray, roomLayer);
+
+                if (hit.collider != null)
                 {
-                    DeselectActiveUnit();
+                    Room room = hit.collider.GetComponent<Room>();
+                    if (room)
+                    {
+                        if (room.pathToRoom != null)
+                        {
+                            activeUnit.StartPath(room.pathToRoom);
+                            DeselectActiveUnit();
+                        }
+                    }
                 }
             }
         }
