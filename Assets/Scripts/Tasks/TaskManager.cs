@@ -34,12 +34,4 @@ public class TaskManager : Singleton<TaskManager>
 
         return task.timeToComplete * multiplier;
     }
-
-    public void UpdateProgress(Unit unit, float progress)
-    {
-        if (unit.progressBarUI)
-        {
-            unit.progressBarUI.UpdateProgress(progress);
-        }
-    }
 }

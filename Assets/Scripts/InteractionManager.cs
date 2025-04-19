@@ -4,77 +4,47 @@ public class InteractionManager : Singleton<InteractionManager>
 {
     [SerializeField] LayerMask unitLayer;
     [SerializeField] LayerMask roomLayer;
-    private Unit activeUnit;
+    [SerializeField] Unit activeUnit;
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!Input.GetMouseButtonDown(0) || Camera.main == null) return;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D unitHit = Physics2D.GetRayIntersection(ray, unitLayer);
+
+        if (unitHit.collider != null)
         {
-            if (activeUnit == null)
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.GetRayIntersection(ray, unitLayer);
+            Unit clickedUnit = unitHit.collider.GetComponent<Unit>();
 
-                if (hit.collider != null)
+            if (clickedUnit != null)
+            {
+                if (clickedUnit.IsMoving)
                 {
-                    Unit unit = hit.collider.GetComponent<Unit>();
-                    if (unit == activeUnit)
-                    {
-                        return;
-                    }
-                    else if (unit)
-                    {
-                        if (unit.IsMoving)
-                        {
-                            DeselectActiveUnit();
-                            return;
-                        }
-                        SetActiveUnit(unit);
-                    }
-                    else
-                    {
-                        DeselectActiveUnit();
-                    }
+                    DeselectActiveUnit();
+                    return;
                 }
-            }
-            else
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.GetRayIntersection(ray, roomLayer);
 
-                if (hit.collider != null)
+                SetActiveUnit(clickedUnit);
+                return;
+            }
+        }
+
+        if (activeUnit != null)
+        {
+            RaycastHit2D roomHit = Physics2D.GetRayIntersection(ray, roomLayer);
+
+            if (roomHit.collider != null)
+            {
+                Room room = roomHit.collider.GetComponent<Room>();
+                if (room != null && room.pathToRoom != null)
                 {
-                    Room room = hit.collider.GetComponent<Room>();
-                    if (room)
-                    {
-                        if (room.pathToRoom != null)
-                        {
-                            activeUnit.StartPath(room.pathToRoom);
-                            DeselectActiveUnit();
-                        }
-                    }
+                    activeUnit.StartPath(room.pathToRoom);
                 }
             }
         }
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (activeUnit == null) return;
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, roomLayer);
-
-            if (hit.collider != null)
-            {
-                Room room = hit.collider.GetComponent<Room>();
-                if (room)
-                {
-                    if (room.pathToRoom != null)
-                    {
-                        activeUnit.StartPath(room.pathToRoom);
-                        DeselectActiveUnit();
-                    }
-                }
-            }
-        }
+        DeselectActiveUnit();
     }
     private void SetActiveUnit(Unit unit)
     {

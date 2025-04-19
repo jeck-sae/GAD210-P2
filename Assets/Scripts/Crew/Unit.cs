@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
-    public ProgressBarUI progressBarUI;
+    public CharacterUI progressBarUI;
     [SerializeField] GameObject overlay;
     [SerializeField] Character character;
     [HideInInspector] public bool IsMoving = false;
@@ -11,7 +12,20 @@ public class Unit : MonoBehaviour
     private int progress;
     private bool returning = false;
     private PathToRoom currentPath;
+    private Room currentRoom;
+    private GameObject abortButton;
 
+    private void Start()
+    {
+        abortButton = progressBarUI.AbortButton;
+        abortButton.GetComponent<Button>().onClick.AddListener(StartPathBack);
+        abortButton.SetActive(false);
+
+        Room hubRoom = RoomManager.GetRoom(RoomID.Hub);
+        currentRoom = hubRoom;
+        hubRoom.AddCharacter(this);
+        UpdateLabel(hubRoom.name);
+    }
     public void StartPath(PathToRoom path)
     {
         Debug.Log("Unit starts path");
@@ -20,12 +34,21 @@ public class Unit : MonoBehaviour
         currentPath = path;
         progress = 0;
 
+        currentRoom?.RemoveCharacter(this); // Remove from previous room
+        UpdateLabel("");
         MoveToNextStop();
     }
 
     public void StartPathBack()
     {
         Debug.Log("Unit starts path back");
+        StopAllCoroutines();
+        UpdateProgress(0);
+
+        if (abortButton)
+        abortButton.SetActive(false);
+        UpdateLabel("");
+
         IsMoving = true;
         returning = true;
         progress = currentPath.WayToRoom.Length - 1;
@@ -43,38 +66,44 @@ public class Unit : MonoBehaviour
             Debug.Log("Reached final room");
             Room finalRoom = RoomManager.GetRoom(currentPath.WayToRoom[currentPath.WayToRoom.Length - 1].NextRoom);
 
+            currentRoom?.RemoveCharacter(this); // Remove from previous room
+            currentRoom = finalRoom;
+            currentRoom.AddCharacter(this);
+
             if (finalRoom.assignedTask)
             {
                 StartTask(finalRoom);
-                return;
             }
             else
             {
                 StartPathBack();
-                return;
             }
+
+            return;
         }
 
         if (beforeHub)
         {
             Debug.Log("Returned to hub");
 
-            Room hubRoom = RoomManager.GetRoom(RoomID.Hub);
-            transform.position = hubRoom.transform.position;
+            currentRoom?.RemoveCharacter(this); // Remove from previous room
+            currentRoom = RoomManager.GetRoom(RoomID.Hub);
+            currentRoom.AddCharacter(this);
 
             IsMoving = false;
             currentPath = null;
             return;
         }
 
-        Way currentWay = currentPath.WayToRoom[progress];
-        Room room = RoomManager.GetRoom(currentWay.NextRoom);
+        Way nextWay = currentPath.WayToRoom[progress];
+        Room nextRoom = RoomManager.GetRoom(nextWay.NextRoom);
 
-        transform.position = room.transform.position;
+        currentRoom?.RemoveCharacter(this); // Remove from current room before entering the next
+        currentRoom = nextRoom;
+        currentRoom.AddCharacter(this);
 
-        StartCoroutine(WaitAndMove(currentWay.TimeToWait));
+        StartCoroutine(WaitAndMove(nextWay.TimeToWait));
     }
-
     IEnumerator WaitAndMove(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
@@ -89,6 +118,10 @@ public class Unit : MonoBehaviour
 
     private void StartTask(Room room)
     {
+        if (abortButton)
+        abortButton.SetActive(true);
+
+        UpdateLabel(room.name);
         float adjustedTime = TaskManager.Instance.GetTaskTime(character, room.assignedTask);
         StartCoroutine(PerformTaskRoutine(room, adjustedTime));
     }
@@ -101,13 +134,13 @@ public class Unit : MonoBehaviour
             timer += Time.deltaTime;
             float progress = timer / duration;
 
-            TaskManager.Instance.UpdateProgress(this, progress);
+            UpdateProgress(progress);
 
             yield return null;
         }
 
         room.assignedTask.OnSuccess();
-        TaskManager.Instance.UpdateProgress(this, 0);
+        UpdateProgress(0);
 
         if (room.assignedTask is PassiveTask)
         {
@@ -118,14 +151,32 @@ public class Unit : MonoBehaviour
             StartPathBack();
         }
     }
+    public void UpdateLabel(string label)
+    {
+        if (progressBarUI)
+        {
+            progressBarUI.SetLabel(label);
+        }
+    }
+    public void UpdateProgress(float progress)
+    {
+        if (progressBarUI)
+        {
+            progressBarUI.UpdateProgress(progress);
+        }
+    }
 
     public void SetUnitActive()
     {
         overlay.SetActive(true);
+        if (progressBarUI)
+        progressBarUI.SetUnitActive();
     }
 
     public void SetUnitInActive()
     {
         overlay.SetActive(false);
+        if (progressBarUI)
+        progressBarUI.SetUnitInActive();
     }
 }

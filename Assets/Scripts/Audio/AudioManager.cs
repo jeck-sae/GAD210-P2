@@ -5,12 +5,18 @@ using UnityEngine;
 public class AudioManager : Singleton<AudioManager>
 {
     [SerializeField] AudioSource soundFXPrefab;
-    private List<AudioSource> loopSources;
+    [SerializeField] AudioClip ambient;
+    [SerializeField] List<AudioSource> loopSources;
 
     [Header("UI Sound")]
     public AudioClip buttonSound;
     public AudioClip hoverSound;
 
+    private void Start()
+    {
+        if (ambient)
+        PlaySound(ambient, 0.5f, true);
+    }
     public void PlaySound(AudioClip audioClip, float volume = 1, bool loop = false, float pitch = 1f)
     {
         AudioSource audioSource = Instantiate(soundFXPrefab, transform.position, Quaternion.identity);
