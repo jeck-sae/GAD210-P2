@@ -17,4 +17,4 @@ MonoBehaviour:
   requiredProficiency: 3
   income:
     resourceType: 2
-    modifier: 10
+    modifier: 5

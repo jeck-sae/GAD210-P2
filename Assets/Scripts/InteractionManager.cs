@@ -4,6 +4,7 @@ public class InteractionManager : Singleton<InteractionManager>
 {
     [SerializeField] LayerMask unitLayer;
     [SerializeField] LayerMask roomLayer;
+    [SerializeField] AudioClip[] interactionClip;
     [SerializeField] Unit activeUnit;
 
     void Update()
@@ -26,6 +27,7 @@ public class InteractionManager : Singleton<InteractionManager>
                 }
 
                 SetActiveUnit(clickedUnit);
+                AudioManager.Instance.PlayRandomSound(interactionClip, 0.5f);
                 return;
             }
         }
@@ -40,6 +42,7 @@ public class InteractionManager : Singleton<InteractionManager>
                 if (room != null && room.pathToRoom != null)
                 {
                     activeUnit.StartPath(room.pathToRoom);
+                    AudioManager.Instance.PlayRandomSound(interactionClip, 0.5f);
                 }
             }
         }

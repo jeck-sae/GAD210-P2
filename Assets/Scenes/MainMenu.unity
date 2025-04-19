@@ -723,7 +723,7 @@ GameObject:
   - component: {fileID: 60177410}
   - component: {fileID: 60177409}
   m_Layer: 8
-  m_Name: Medicalbay
+  m_Name: Medical Bay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -805,7 +805,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: 
   pathToRoom: {fileID: 11400000, guid: 8e1967bac2001b04aabd99c547893874, type: 2}
   roomID: 3
   assignedTask: {fileID: 0}
@@ -1651,9 +1650,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7169c67708ad24fbba799bea3ae05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressBarUI: {fileID: 0}
+  progressBarUI: {fileID: 2034186004}
   overlay: {fileID: 791348634}
-  abortButton: {fileID: 1423129534}
   character: {fileID: 11400000, guid: cc91ead1b173b3442b892772b317f458, type: 2}
   IsMoving: 0
 --- !u!58 &161212416
@@ -2449,6 +2447,9 @@ MonoBehaviour:
   roomLayer:
     serializedVersion: 2
     m_Bits: 256
+  interactionClip:
+  - {fileID: 8300000, guid: d452e5e1ae98b824998194c3dadab473, type: 3}
+  - {fileID: 8300000, guid: fceec7ac56b0fc249b3844ab25f37868, type: 3}
   activeUnit: {fileID: 0}
 --- !u!1 &221972660
 GameObject:
@@ -2645,7 +2646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: 
   pathToRoom: {fileID: 11400000, guid: 9bafe2a773053de4dba01ebebad1e7ff, type: 2}
   roomID: 4
   assignedTask: {fileID: 11400000, guid: 7cc2ca23a8745ee43823053c139cbac3, type: 2}
@@ -3805,7 +3805,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: 
   pathToRoom: {fileID: 0}
   roomID: 11
   assignedTask: {fileID: 0}
@@ -5026,6 +5025,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 754473172080106580, guid: 3bd9604b24a12d34b8a8569196b994ed, type: 3}
   m_PrefabInstance: {fileID: 426761859}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &426761863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7877307387648217518, guid: 3bd9604b24a12d34b8a8569196b994ed, type: 3}
+  m_PrefabInstance: {fileID: 426761859}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03bb64cd60c5ec48ac53b5171e4b08e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &427473804
 GameObject:
   m_ObjectHideFlags: 0
@@ -9314,9 +9324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7169c67708ad24fbba799bea3ae05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressBarUI: {fileID: 0}
+  progressBarUI: {fileID: 426761863}
   overlay: {fileID: 708424338}
-  abortButton: {fileID: 0}
   character: {fileID: 11400000, guid: cc91ead1b173b3442b892772b317f458, type: 2}
   IsMoving: 0
 --- !u!114 &728068897
@@ -12679,7 +12688,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: 
   pathToRoom: {fileID: 0}
   roomID: 10
   assignedTask: {fileID: 0}
@@ -12885,7 +12893,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: 
   pathToRoom: {fileID: 11400000, guid: 6d24c4557abfc2f4d9d775bd4b788672, type: 2}
   roomID: 2
   assignedTask: {fileID: 0}
@@ -13630,9 +13637,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7169c67708ad24fbba799bea3ae05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressBarUI: {fileID: 0}
+  progressBarUI: {fileID: 1450801515}
   overlay: {fileID: 721996375}
-  abortButton: {fileID: 0}
   character: {fileID: 11400000, guid: cc91ead1b173b3442b892772b317f458, type: 2}
   IsMoving: 0
 --- !u!114 &1024952645
@@ -16858,7 +16864,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: 
   pathToRoom: {fileID: 0}
   roomID: 8
   assignedTask: {fileID: 0}
@@ -17580,9 +17585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7169c67708ad24fbba799bea3ae05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressBarUI: {fileID: 0}
+  progressBarUI: {fileID: 2130702835}
   overlay: {fileID: 1124381137}
-  abortButton: {fileID: 0}
   character: {fileID: 11400000, guid: cc91ead1b173b3442b892772b317f458, type: 2}
   IsMoving: 0
 --- !u!114 &1200525899
@@ -17924,7 +17928,7 @@ GameObject:
   - component: {fileID: 1234492143}
   - component: {fileID: 1234492142}
   m_Layer: 8
-  m_Name: ControlRoom
+  m_Name: Control Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18015,7 +18019,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: 
   pathToRoom: {fileID: 11400000, guid: 076a2052ba5a7614ab06cf768204b1b0, type: 2}
   roomID: 1
   assignedTask: {fileID: 11400000, guid: a5df4d4ba4cc8bb4cac2d43a80a88438, type: 2}
@@ -18611,7 +18614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: 
   pathToRoom: {fileID: 0}
   roomID: 0
   assignedTask: {fileID: 0}
@@ -18768,7 +18770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: 
   pathToRoom: {fileID: 0}
   roomID: 7
   assignedTask: {fileID: 0}
@@ -21536,11 +21537,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 0
---- !u!1 &1423129534 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7016479887703853785, guid: 3bd9604b24a12d34b8a8569196b994ed, type: 3}
-  m_PrefabInstance: {fileID: 3465853167179047392}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1425381338
 GameObject:
   m_ObjectHideFlags: 0
@@ -21872,6 +21868,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c13ae11e2c770d4b8a1f835beed788f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1450801515 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7877307387648217518, guid: 3bd9604b24a12d34b8a8569196b994ed, type: 3}
+  m_PrefabInstance: {fileID: 872590757}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03bb64cd60c5ec48ac53b5171e4b08e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1453607621
@@ -24468,6 +24475,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 0
+--- !u!114 &1662575097 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7877307387648217518, guid: 3bd9604b24a12d34b8a8569196b994ed, type: 3}
+  m_PrefabInstance: {fileID: 726722157}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03bb64cd60c5ec48ac53b5171e4b08e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1676965477
 GameObject:
   m_ObjectHideFlags: 0
@@ -26316,7 +26334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: 
   pathToRoom: {fileID: 11400000, guid: 73111becadefa6c409c722911a8108de, type: 2}
   roomID: 6
   assignedTask: {fileID: 11400000, guid: 00e5d42410a606e49ace40c5253b15a0, type: 2}
@@ -27359,7 +27376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: 
   pathToRoom: {fileID: 11400000, guid: 04cf4262aedfa834180cb2fbb21f6f98, type: 2}
   roomID: 5
   assignedTask: {fileID: 0}
@@ -29062,7 +29078,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e210a7324e8fa47a7c98f47f9b819c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: 
   pathToRoom: {fileID: 0}
   roomID: 9
   assignedTask: {fileID: 0}
@@ -29606,6 +29621,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 754473172080106580, guid: 3bd9604b24a12d34b8a8569196b994ed, type: 3}
   m_PrefabInstance: {fileID: 3465853167179047392}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2034186004 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7877307387648217518, guid: 3bd9604b24a12d34b8a8569196b994ed, type: 3}
+  m_PrefabInstance: {fileID: 3465853167179047392}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03bb64cd60c5ec48ac53b5171e4b08e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2035212638
 GameObject:
   m_ObjectHideFlags: 0
@@ -30283,9 +30309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7169c67708ad24fbba799bea3ae05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressBarUI: {fileID: 0}
+  progressBarUI: {fileID: 1662575097}
   overlay: {fileID: 1300878744}
-  abortButton: {fileID: 0}
   character: {fileID: 11400000, guid: cc91ead1b173b3442b892772b317f458, type: 2}
   IsMoving: 0
 --- !u!114 &2124837586
@@ -30596,6 +30621,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 754473172080106580, guid: 3bd9604b24a12d34b8a8569196b994ed, type: 3}
   m_PrefabInstance: {fileID: 2130702831}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2130702835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7877307387648217518, guid: 3bd9604b24a12d34b8a8569196b994ed, type: 3}
+  m_PrefabInstance: {fileID: 2130702831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03bb64cd60c5ec48ac53b5171e4b08e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2136633116
 GameObject:
   m_ObjectHideFlags: 0
@@ -30792,6 +30828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: audioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4338374045575291198, guid: 5c11921f43571e44aba5c9fc822c8c54, type: 3}
+      propertyPath: ambient
+      value: 
+      objectReference: {fileID: 8300000, guid: e98d212cdbdd9d8409879c09fc936f2c, type: 3}
     - target: {fileID: 6251369238308660073, guid: 5c11921f43571e44aba5c9fc822c8c54, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

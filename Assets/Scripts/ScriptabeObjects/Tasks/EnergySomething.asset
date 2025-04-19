@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: EnergySomething
   m_EditorClassIdentifier: 
   taskName: EnergySomething
+  timeToComplete: 10
   requiredProficiency: 1
   income:
     resourceType: 1
-    modifier: 10
+    modifier: 5
