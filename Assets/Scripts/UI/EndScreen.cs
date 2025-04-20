@@ -28,4 +28,10 @@ public class EndScreen : Singleton<EndScreen>
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void mainmenu()
+    {
+        //SceneManager.LoadScene(1);
+        Debug.Log("main menu not active yet");
+    }
 }
