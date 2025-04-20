@@ -47,6 +47,7 @@ public class ResourceManager : Singleton<ResourceManager>
 
         if (food == 0 || energy == 0 || oxygen == 0)
         {
+            EndScreen.Instance.GAMEOVER();
             Debug.Log("YOU LOSE");
         }
 
