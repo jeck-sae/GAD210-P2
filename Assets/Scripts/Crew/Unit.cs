@@ -25,6 +25,8 @@ public class Unit : MonoBehaviour
         currentRoom = hubRoom;
         hubRoom.AddCharacter(this);
         UpdateLabel(hubRoom.name);
+
+        progressBarUI.SetName(character.characterName);
     }
     public void StartPath(PathToRoom path)
     {
