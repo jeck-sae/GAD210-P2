@@ -14,7 +14,7 @@ public class ResourceManager : Singleton<ResourceManager>
     [SerializeField] int startingOxygen = 25;
 
     [Header("Decay")]
-    [SerializeField] int decayAmount = 1;
+    [SerializeField]public int decayAmount = 1;
     [SerializeField] float decayInterval = 1f;
     private float decayTimer;
 
