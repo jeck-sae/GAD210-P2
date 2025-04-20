@@ -13,7 +13,7 @@ public class PassiveTask : Task
     [Header("On Complition")]
     public ResourceIncome income;
 
-    public override void OnSuccess()
+    protected override void DoSuccess()
     {
         ResourceManager.Instance.AddResource(income.resourceType, income.modifier);
     }

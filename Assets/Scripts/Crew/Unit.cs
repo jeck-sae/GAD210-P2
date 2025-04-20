@@ -141,7 +141,7 @@ public class Unit : MonoBehaviour
             yield return null;
         }
 
-        room.assignedTask.OnSuccess();
+        room.assignedTask.Success();
         UpdateProgress(0);
 
         if (room.assignedTask is PassiveTask)
