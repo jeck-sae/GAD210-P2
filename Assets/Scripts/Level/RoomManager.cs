@@ -3,8 +3,8 @@ using UnityEngine;
 public enum RoomID
 {
     Hub,
+    ControlRoom,
     Communications,
-    Bridge,
     MedicalBay,
     Kitchen,
     Storage,

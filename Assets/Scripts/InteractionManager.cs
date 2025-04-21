@@ -4,56 +4,50 @@ public class InteractionManager : Singleton<InteractionManager>
 {
     [SerializeField] LayerMask unitLayer;
     [SerializeField] LayerMask roomLayer;
-    private Unit activeUnit;
+    [SerializeField] AudioClip[] interactionClip;
+    [SerializeField] Unit activeUnit;
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, unitLayer);
+        if (!Input.GetMouseButtonDown(0) || Camera.main == null) return;
 
-            if (hit.collider != null)
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D unitHit = Physics2D.GetRayIntersection(ray, unitLayer);
+
+        if (unitHit.collider != null)
+        {
+            Unit clickedUnit = unitHit.collider.GetComponent<Unit>();
+
+            if (clickedUnit != null)
             {
-                Unit unit = hit.collider.GetComponent<Unit>();
-                if (unit == activeUnit)
-                {
-                    return;
-                }
-                else if (unit)
-                {
-                    if (unit.IsMoving)
-                    {
-                        DeselectActiveUnit();
-                        return;
-                    }
-                    SetActiveUnit(unit);
-                }
-                else
+                if (clickedUnit.IsMoving)
                 {
                     DeselectActiveUnit();
+                    return;
                 }
+
+                SetActiveUnit(clickedUnit);
+                AudioManager.Instance.PlayRandomSound(interactionClip, 0.5f);
+                return;
             }
         }
-        if (Input.GetMouseButtonDown(1))
+
+        if (activeUnit != null)
         {
-            if (activeUnit == null) return;
+            RaycastHit2D roomHit = Physics2D.GetRayIntersection(ray, roomLayer);
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, roomLayer);
-
-            if (hit.collider != null)
+            if (roomHit.collider != null)
             {
-                Room room = hit.collider.GetComponent<Room>();
-                if (room)
+                Room room = roomHit.collider.GetComponent<Room>();
+                if (room != null && room.pathToRoom != null)
                 {
-                    if (room.pathToRoom != null)
-                    {
-                        activeUnit.StartPath(room.pathToRoom);
-                        DeselectActiveUnit();
-                    }
+                    activeUnit.StartPath(room.pathToRoom);
+                    AudioManager.Instance.PlayRandomSound(interactionClip, 0.5f);
                 }
             }
         }
+
+        DeselectActiveUnit();
     }
     private void SetActiveUnit(Unit unit)
     {

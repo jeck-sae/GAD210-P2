@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa0d018d046511c439a3e0b769dc011e
+guid: e66dc2f97c0eae445a5d770080f837e0
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: crewperson 1
+  - name: crewperson4
     originalName: 
-    pivot: {x: 0.5238095, y: -0.2}
+    pivot: {x: 0.5238095, y: -0.1891892}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -134,8 +134,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 42
-      height: 35
-    spriteID: 8e4822e1c687fdc42ad5cfdfdf380242
+      height: 37
+    spriteID: 1be0e0a36a249d24baa485b64a8662cc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -145,7 +145,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData:
-  - name: crewperson_0
+  - name: crewperson4_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -156,8 +156,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 42
-      height: 35
-    spriteID: 06d8874c88a26e44890c348707cdbde0
+      height: 37
+    spriteID: 0c05ae214c8e69948af573554b1417e4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -168,21 +168,21 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: 584486843
-    name: crewperson 1
+    guid: -2035355886
+    name: crewperson4
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: crewperson
+    - name: crewperson4
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 3
         y: 7
         width: 42
-        height: 35
-      spriteId: 8e4822e1c687fdc42ad5cfdfdf380242
+        height: 37
+      spriteId: 1be0e0a36a249d24baa485b64a8662cc
     linkedCells: []
     parentIndex: -1
   platformSettings:
