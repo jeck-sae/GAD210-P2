@@ -53,13 +53,12 @@ public class DialougeManager : MonoBehaviour
             dialouge.SetActive(false);
             SceneManager.LoadScene(2);
         }
-
-        
        
     }
-    void Start()
-    {
 
+    public void SkipDialogue()
+    {
+        SceneManager.LoadScene(2);
     }
 
     void Update()
