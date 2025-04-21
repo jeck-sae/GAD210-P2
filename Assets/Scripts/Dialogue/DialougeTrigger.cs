@@ -6,9 +6,9 @@ public class DialougeTrigger : MonoBehaviour
     public DialougeCharacter[] characters;
 
     [System.Obsolete]
-    public void StartDialouge()
+    private void Start()
     {
-        FindObjectOfType<DialougeManager>().OpenDialouge(dialouges,characters);
+        FindObjectOfType<DialougeManager>().OpenDialouge(dialouges, characters);
     }
 }
 

@@ -300,6 +300,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1028270878 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2475807379979480499, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
+  m_PrefabInstance: {fileID: 3650645512416586178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1028270880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028270878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4815bb5cc8cf1194f8ff1a1f4ccad9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouges:
+  - charId: 0
+    dialouge: "\u2013is \u2013 \u2014----on shuttle \u201321, I repeat th\u2013 is
+      expedition \u2014--- \u20141, \u2014ommand do you copy? "
+  - charId: 0
+    dialouge: ---//*****
+  - charId: 0
+    dialouge: 'I repeat this is expedition shuttle 0021, command do you copy? '
+  - charId: 0
+    dialouge: 'Finally! '
+  - charId: 0
+    dialouge: "Command, expedition into the whirlpools has failed, we\u2019ve been
+      hit. Expedition shuttle 0021 is adrift."
+  - charId: 0
+    dialouge: "We\u2019re expecting volcanic activity soon, I don't think the shuttle
+      can take another hit. "
+  - charId: 0
+    dialouge: We will try to maintain it, but chances are looking low, I ask for
+      immediate backup.
+  - charId: 0
+    dialouge: " I repeat 0021 is adrift, requesting immediate backup, over\u2014 "
+  characters:
+  - characterName: Jeff
+    charSprite: {fileID: 6876014365125526849, guid: ca616b96774ffee4286c4fc01707814e, type: 3}
 --- !u!1 &1484704180
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +457,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -437,47 +478,67 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1 &2021315048 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1821127411562008162, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
-  m_PrefabInstance: {fileID: 3650645512416586178}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2021315050
-MonoBehaviour:
+--- !u!1001 &1783944132
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2021315048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4815bb5cc8cf1194f8ff1a1f4ccad9a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialouges:
-  - charId: 0
-    dialouge: "\u2013is \u2013 \u2014----on shuttle \u201321, I repeat th\u2013 is
-      expedition \u2014--- \u20141, \u2014ommand do you copy? "
-  - charId: 0
-    dialouge: ---//*****
-  - charId: 0
-    dialouge: 'I repeat this is expedition shuttle 0021, command do you copy? '
-  - charId: 0
-    dialouge: 'Finally! '
-  - charId: 0
-    dialouge: "Command, expedition into the whirlpools has failed, we\u2019ve been
-      hit. Expedition shuttle 0021 is adrift."
-  - charId: 0
-    dialouge: "We\u2019re expecting volcanic activity soon, I don't think the shuttle
-      can take another hit. "
-  - charId: 0
-    dialouge: We will try to maintain it, but chances are looking low, I ask for
-      immediate backup.
-  - charId: 0
-    dialouge: " I repeat 0021 is adrift, requesting immediate backup, over\u2014 "
-  characters:
-  - characterName: Jeff
-    charSprite: {fileID: 6876014365125526849, guid: ca616b96774ffee4286c4fc01707814e, type: 3}
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3679988114801491626, guid: 4dc3cac37f26b59498f378e0fbdc635a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679988114801491626, guid: 4dc3cac37f26b59498f378e0fbdc635a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679988114801491626, guid: 4dc3cac37f26b59498f378e0fbdc635a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679988114801491626, guid: 4dc3cac37f26b59498f378e0fbdc635a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679988114801491626, guid: 4dc3cac37f26b59498f378e0fbdc635a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679988114801491626, guid: 4dc3cac37f26b59498f378e0fbdc635a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679988114801491626, guid: 4dc3cac37f26b59498f378e0fbdc635a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679988114801491626, guid: 4dc3cac37f26b59498f378e0fbdc635a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679988114801491626, guid: 4dc3cac37f26b59498f378e0fbdc635a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679988114801491626, guid: 4dc3cac37f26b59498f378e0fbdc635a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648331258065224809, guid: 4dc3cac37f26b59498f378e0fbdc635a, type: 3}
+      propertyPath: m_Name
+      value: Global Volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648331258065224809, guid: 4dc3cac37f26b59498f378e0fbdc635a, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4dc3cac37f26b59498f378e0fbdc635a, type: 3}
 --- !u!224 &652254572532895905 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8177289983411638014, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
@@ -517,6 +578,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialouge
       objectReference: {fileID: 0}
+    - target: {fileID: 226988493559766351, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 703026168969661664, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 703026168969661664, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 0
@@ -532,7 +601,7 @@ PrefabInstance:
     - target: {fileID: 703026168969661664, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2021315050}
+      objectReference: {fileID: 0}
     - target: {fileID: 703026168969661664, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -548,6 +617,18 @@ PrefabInstance:
     - target: {fileID: 703026168969661664, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821127411562008162, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2475807379979480499, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
+      propertyPath: m_Name
+      value: DialougeManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2475807379979480499, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4569075600405900433, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
       propertyPath: m_LocalScale.x
@@ -567,7 +648,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4569075600405900433, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 325.23
+      value: -147
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258285895378135983, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5401946075584617171, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
       propertyPath: m_text
@@ -664,15 +749,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1821127411562008162, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 226988493559766351, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4804251705892234948}
-    - targetCorrespondingSourceObject: {fileID: 1821127411562008162, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 2475807379979480499, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2021315050}
+      addedObject: {fileID: 1028270880}
   m_SourcePrefab: {fileID: 100100000, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
 --- !u!1 &4804251705892234947 stripped
 GameObject:
@@ -695,6 +781,7 @@ MonoBehaviour:
   charName: {fileID: 1742037356493877796}
   dialougeText: {fileID: 2210442995313054463}
   backgroundBox: {fileID: 652254572532895905}
+  dialouge: {fileID: 4804251705892234947}
 --- !u!114 &8809695332000043751 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8197438214637867497, guid: d5e80a0f37c6eff41ba369b56454eeae, type: 3}
@@ -713,3 +800,4 @@ SceneRoots:
   - {fileID: 1484704183}
   - {fileID: 604205132}
   - {fileID: 918667086}
+  - {fileID: 1783944132}

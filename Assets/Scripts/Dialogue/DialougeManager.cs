@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class DialougeManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class DialougeManager : MonoBehaviour
     DialougeCharacter[] currentDialougeCharacter;
     int activeDialouge = 0;
     public static bool  isActive = false;
+   [SerializeField] GameObject dialouge; 
 
     public void OpenDialouge(Dialouge[] dialouges, DialougeCharacter[] characters)
     {
@@ -48,6 +50,8 @@ public class DialougeManager : MonoBehaviour
         {
             Debug.Log("Dialouge Ended");
             isActive = false;
+            dialouge.SetActive(false);
+            SceneManager.LoadScene(2);
         }
 
         
