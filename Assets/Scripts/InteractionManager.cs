@@ -12,7 +12,7 @@ public class InteractionManager : Singleton<InteractionManager>
         if (!Input.GetMouseButtonDown(0) || Camera.main == null) return;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit2D unitHit = Physics2D.GetRayIntersection(ray, unitLayer);
+        RaycastHit2D unitHit = Physics2D.GetRayIntersection(ray, 100, unitLayer);
 
         if (unitHit.collider != null)
         {
@@ -34,7 +34,7 @@ public class InteractionManager : Singleton<InteractionManager>
 
         if (activeUnit != null)
         {
-            RaycastHit2D roomHit = Physics2D.GetRayIntersection(ray, roomLayer);
+            RaycastHit2D roomHit = Physics2D.GetRayIntersection(ray, 100, roomLayer);
 
             if (roomHit.collider != null)
             {

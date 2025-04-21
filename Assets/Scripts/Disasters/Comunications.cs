@@ -28,12 +28,15 @@ public class Comunications : MonoBehaviour
     IEnumerator Sabotage()
     {
         yield return new WaitForSeconds(delayTime);
+        if (!isActiveAndEnabled) yield break;
         Energy.SetActive(false);
         noEnergy.SetActive(true);
         yield return new WaitForSeconds(delayTime);
+        if (!isActiveAndEnabled) yield break;
         noFood.SetActive(true);
         Food.SetActive(false);
         yield return new WaitForSeconds(delayTime);
+        if (!isActiveAndEnabled) yield break;
         noOxegen.SetActive(true);
         Oxegen.SetActive(false); 
     }
