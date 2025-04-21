@@ -339,8 +339,8 @@ MonoBehaviour:
   - charId: 0
     dialouge: " I repeat 0021 is adrift, requesting immediate backup, over\u2014 "
   characters:
-  - characterName: Jeff
-    charSprite: {fileID: 6876014365125526849, guid: ca616b96774ffee4286c4fc01707814e, type: 3}
+  - characterName: Crew Member
+    charSprite: {fileID: -8984405553038303564, guid: 2f3ca6a2ea979a04685c3cdf1a1ac6ea, type: 3}
 --- !u!1 &1484704180
 GameObject:
   m_ObjectHideFlags: 0
