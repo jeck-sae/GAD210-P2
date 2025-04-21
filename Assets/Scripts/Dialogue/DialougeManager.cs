@@ -67,6 +67,11 @@ public class DialougeManager : MonoBehaviour
         {
             NextDialouge();
         }
+
+        if (Input.GetMouseButtonDown(0) && isActive == true)
+        {
+            NextDialouge();
+        }
     }
 }
 
