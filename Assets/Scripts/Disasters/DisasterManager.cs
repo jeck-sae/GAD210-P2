@@ -3,15 +3,17 @@ using System.Collections;
 using UnityEngine;
 using System;
 
-public class DisasterManager : MonoBehaviour
+public class DisasterManager : Singleton<DisasterManager>
 {
-    float startDelay = 30;
-    float intervalDelay = 20;
-    float intervalRandomRange = 5;
+    [SerializeField] float startDelay = 30;
+    [SerializeField] float intervalDelay = 20;
+    [SerializeField] float intervalRandomRange = 5;
 
     public List<Disaster> disasters; 
 
-    List<Disaster> inactiveDisasters = new();
+    public List<Disaster> inactiveDisasters = new();
+
+
 
     private void Start()
     {

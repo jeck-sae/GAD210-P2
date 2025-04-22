@@ -15,6 +15,7 @@ MonoBehaviour:
   taskName: Cooking
   timeToComplete: 10
   requiredProficiency: 3
+  icon: {fileID: 21300000, guid: c4bb38706eee6d94d80aebb924104c2d, type: 3}
   income:
     resourceType: 2
     modifier: 5

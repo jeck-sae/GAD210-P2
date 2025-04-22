@@ -70,6 +70,21 @@ public class ResourceManager : Singleton<ResourceManager>
         }
         UpdateResourceUI();
     }
+    public int GetResource(ResourceType type)
+    {
+        switch (type)
+        {
+            case ResourceType.Food:
+                return food;
+            case ResourceType.Energy:
+                return energy;
+            case ResourceType.Oxygen:
+                return oxygen;
+            default:
+                return 0;
+        }
+    }
+
     public void UpdateResourceUI()
     {
         foodText.text = food.ToString();

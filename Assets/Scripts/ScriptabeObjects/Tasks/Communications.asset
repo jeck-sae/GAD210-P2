@@ -15,3 +15,4 @@ MonoBehaviour:
   taskName: Communications
   timeToComplete: 10
   requiredProficiency: 0
+  icon: {fileID: 21300000, guid: 82b1434caea3c514ebba267bfcb1e2b2, type: 3}

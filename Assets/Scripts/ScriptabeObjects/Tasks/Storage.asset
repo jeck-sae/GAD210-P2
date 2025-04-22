@@ -15,3 +15,4 @@ MonoBehaviour:
   taskName: Storage
   timeToComplete: 5
   requiredProficiency: 0
+  icon: {fileID: 21300000, guid: 2df368af752ff3a4a8c11e4c335f6055, type: 3}
