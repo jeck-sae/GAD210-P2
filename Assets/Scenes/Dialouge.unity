@@ -565,7 +565,7 @@ MonoBehaviour:
     dialouge: " I repeat 0021 is adrift, requesting immediate backup, over\u2014 "
   characters:
   - characterName: Crew Member
-    charSprite: {fileID: -8984405553038303564, guid: 2f3ca6a2ea979a04685c3cdf1a1ac6ea, type: 3}
+    charSprite: {fileID: 2094207085007387839, guid: aa0d018d046511c439a3e0b769dc011e, type: 3}
 --- !u!1 &1204086151
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60, y: -22}
+  m_AnchoredPosition: {x: -204, y: -22}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1484704180

@@ -16,6 +16,8 @@ public class DialougeTrigger : MonoBehaviour
 public class Dialouge
 {
     public int charId;
+
+    [TextArea(3, 10)]
     public string dialouge;
 }
 

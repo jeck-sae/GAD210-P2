@@ -51,14 +51,14 @@ public class DialougeManager : MonoBehaviour
             Debug.Log("Dialouge Ended");
             isActive = false;
             dialouge.SetActive(false);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("TheGame");
         }
        
     }
 
     public void SkipDialogue()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("TheGame");
     }
 
     void Update()
