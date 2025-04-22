@@ -15,7 +15,7 @@ MonoBehaviour:
   taskName: AirSomethin
   timeToComplete: 10
   requiredProficiency: 0
-  icon: {fileID: 21300000, guid: d992d5ba7a6a7bf47b8041ca2ea073be, type: 3}
+  icon: {fileID: 21300000, guid: cef86327ba9c33b44ac0c5693472672b, type: 3}
   income:
     resourceType: 0
     modifier: 5

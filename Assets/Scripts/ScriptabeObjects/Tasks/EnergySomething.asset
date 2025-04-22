@@ -15,7 +15,7 @@ MonoBehaviour:
   taskName: EnergySomething
   timeToComplete: 10
   requiredProficiency: 1
-  icon: {fileID: 21300000, guid: 8561290d20cedd440bde6e205373ac5b, type: 3}
+  icon: {fileID: -9164340925515589204, guid: abbd9fca2ea008a4ba09e3c0276c8833, type: 3}
   income:
     resourceType: 1
     modifier: 5
