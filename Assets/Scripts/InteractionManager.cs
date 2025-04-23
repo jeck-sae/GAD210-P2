@@ -7,8 +7,12 @@ public class InteractionManager : Singleton<InteractionManager>
     [SerializeField] AudioClip[] interactionClip;
     [SerializeField] Unit activeUnit;
 
+    private Room lastHoveredRoom = null;
+
     void Update()
     {
+        HoverOverRoom();
+
         if (!Input.GetMouseButtonDown(0) || Camera.main == null) return;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -48,6 +52,41 @@ public class InteractionManager : Singleton<InteractionManager>
         }
 
         DeselectActiveUnit();
+    }
+    private void HoverOverRoom()
+    {
+        if (Camera.main == null) return;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D roomHit = Physics2D.GetRayIntersection(ray, 100, roomLayer);
+
+
+        if (roomHit.collider != null)
+        {
+            Room hoveredRoom = roomHit.collider.GetComponent<Room>();
+
+            if (hoveredRoom != null && hoveredRoom.pathToRoom != null)
+            {
+                if (hoveredRoom != lastHoveredRoom)
+                {
+                    if (lastHoveredRoom != null)
+                    {
+                        lastHoveredRoom.OnHoverExit();
+                    }
+                    hoveredRoom.OnHoverEnter();
+                    lastHoveredRoom = hoveredRoom;
+                }
+                else 
+                {
+                    hoveredRoom.OnHoverEnter();
+                    lastHoveredRoom = hoveredRoom;
+                }
+            }
+        }
+        else if (lastHoveredRoom != null)
+        {
+            lastHoveredRoom.OnHoverExit();
+        }
     }
     private void SetActiveUnit(Unit unit)
     {

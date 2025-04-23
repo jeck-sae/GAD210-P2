@@ -9,6 +9,9 @@ public class Room : MonoBehaviour
     public Transform[] characterPos; // Size 5
     public List<Unit> unitList = new List<Unit>(5);
 
+    [SerializeField] GameObject HoverOverlay;
+    private bool isHovered = false;
+
     void Awake()
     {
         RoomManager.Register(this);
@@ -39,5 +42,19 @@ public class Room : MonoBehaviour
                 unitList[i].transform.position = characterPos[i].position;
             }
         }
+    }
+
+    public void OnHoverEnter()
+    {
+        if (isHovered) return;
+        isHovered = true;
+        HoverOverlay.SetActive(true);
+    }
+
+    public void OnHoverExit()
+    {
+        if (!isHovered) return;
+        isHovered = false;
+        HoverOverlay.SetActive(false);
     }
 }
